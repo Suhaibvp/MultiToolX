@@ -1,0 +1,21 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="16dp">
+
+    <com.canhub.cropper.CropImageView
+        android:id="@+id/cropImageView"
+        android:layout_width="match_parent"
+        android:layout_height="400dp"
+        app:cropShape="rectangle"
+        app:cropGuidelines="on" />
+
+
+    <Button
+        android:id="@+id/cropButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Crop &amp; Save" />
+</LinearLayout>

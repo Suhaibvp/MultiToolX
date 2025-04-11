@@ -1,0 +1,43 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:padding="12dp"
+    android:background="?android:selectableItemBackground">
+
+    <!-- Top row: Folder name + video count -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center_vertical">
+
+        <TextView
+            android:id="@+id/folderNameTextView"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Folder Name"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:textColor="?android:textColorPrimary" />
+
+        <TextView
+            android:id="@+id/videoCountTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="3 videos"
+            android:textSize="14sp"
+            android:textColor="?android:textColorSecondary" />
+    </LinearLayout>
+
+    <!-- Bottom row: Path -->
+    <TextView
+        android:id="@+id/folderPathTextView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="path/to/folder"
+        android:textSize="12sp"
+        android:textColor="?android:textColorSecondary"
+        android:layout_marginTop="4dp" />
+</LinearLayout>

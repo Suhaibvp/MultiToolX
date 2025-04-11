@@ -1,0 +1,133 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/rootLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <!-- VideoView for playback -->
+    <!-- Wrong: causes resource linking error -->
+    <!-- app:show_playback_speed_button="true" -->
+    <!-- app:show_audio_track_button="true" -->
+
+    <androidx.media3.ui.PlayerView
+        android:id="@+id/playerView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:resize_mode="fit"
+        app:use_artwork="false" />
+
+
+    <!-- Gesture Zones -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="horizontal"
+        android:gravity="center"
+        android:clickable="false"
+        android:focusable="false">
+
+        <View
+            android:id="@+id/tapLeft"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1" />
+
+        <View
+            android:id="@+id/tapCenter"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1" />
+
+        <View
+            android:id="@+id/tapRight"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1" />
+    </LinearLayout>
+
+    <!-- Bottom Controls (collapsible) -->
+    <LinearLayout
+        android:id="@+id/bottomControls"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom"
+        android:orientation="vertical"
+        android:background="#66000000"
+        android:padding="10dp">
+
+        <!-- Toggle Collapse -->
+        <TextView
+            android:id="@+id/toggleControls"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="▼ More Options"
+            android:textColor="@android:color/white"
+            android:textSize="16sp"
+            android:layout_gravity="center" />
+
+        <!-- Expanded Control Buttons -->
+        <LinearLayout
+            android:id="@+id/expandedControls"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:visibility="gone"
+            android:gravity="center"
+            android:layout_marginTop="8dp">
+            <Button
+                android:id="@+id/btnSubtitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:drawableStart="@drawable/icon_subtitle"
+                android:layout_margin="8dp" />
+
+            <Button
+                android:id="@+id/btnAudioTrack"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:drawableStart="@drawable/icon_audio"
+                android:layout_margin="8dp" />
+
+            <Button
+                android:id="@+id/prevButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="⏪" />
+
+            <Button
+                android:id="@+id/nextButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="⏩"
+                android:layout_marginStart="10dp" />
+
+            <Button
+                android:id="@+id/hideControls"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Hide UI"
+                android:layout_marginStart="10dp" />
+        </LinearLayout>
+    </LinearLayout>
+    <FrameLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:id="@+id/overlay_container"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:visibility="gone">
+
+        <TextView
+            android:id="@+id/overlay_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Volume: 50%"
+            android:textColor="#FFFFFF"
+            android:textSize="18sp"
+            android:background="#66000000"
+            android:padding="10dp"
+            android:layout_gravity="center"/>
+    </FrameLayout>
+
+
+</FrameLayout>

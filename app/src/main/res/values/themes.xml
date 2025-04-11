@@ -1,0 +1,15 @@
+<resources>
+    <style name="Theme.SimpleWorld" parent="Theme.MaterialComponents.DayNight.DarkActionBar">
+        <!-- Base colors -->
+        <item name="colorPrimary">@color/purple_500</item>
+        <item name="colorPrimaryVariant">@color/purple_700</item>
+        <item name="colorSecondary">@color/teal_200</item>
+
+        <!-- Custom Attributes -->
+        <item name="colorButtonNormal">#000000</item>
+        <item name="textColor">@color/black</item>
+        <item name="subTextColor">@color/gray</item>
+        <item name="android:textColor">@color/black</item> <!-- Sometimes needed explicitly -->
+    </style>
+</resources>
+
