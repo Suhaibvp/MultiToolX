@@ -41,7 +41,8 @@
         </activity>
         <activity android:name=".ui.videolistpage.VideoListActivity"/>
         <activity android:name=".ui.videofiles.VideoFilesActivity"/>
-        <activity android:name=".ui.pdf.PdfGeneratorActivity"/>
+        <activity android:name=".ui.pdf.PdfGeneratorActivity"
+            android:windowSoftInputMode="adjustPan"/>
     </application>
 
 <!--    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />-->

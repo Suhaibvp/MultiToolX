@@ -113,11 +113,11 @@ class PdfGeneratorActivity : AppCompatActivity() {
         drawerLayout.addDrawerListener(object : DrawerLayout.DrawerListener {
             override fun onDrawerSlide(drawerView: View, slideOffset: Float) {}
             override fun onDrawerOpened(drawerView: View) {
-                menuIcon.visibility = View.GONE
+                //menuIcon.visibility = View.GONE
             }
 
             override fun onDrawerClosed(drawerView: View) {
-                menuIcon.visibility = View.VISIBLE
+                //menuIcon.visibility = View.VISIBLE
             }
 
             override fun onDrawerStateChanged(newState: Int) {}
@@ -216,12 +216,12 @@ class PdfGeneratorActivity : AppCompatActivity() {
                     val lineCount = layout.lineCount
                     val lastLineBottom = layout.getLineBottom(lineCount - 1)
 
-                    if (lastLineBottom >= editText.height - editText.paddingBottom) {
-                        // Add new page if not already the last EditText
-                        if (editText == pageEditTexts.last()) {
-                            addNewPage()
-                        }
-                    }
+//                    if (lastLineBottom >= editText.height - editText.paddingBottom) {
+//                        // Add new page if not already the last EditText
+//                        if (editText == pageEditTexts.last()) {
+//                            addNewPage()
+//                        }
+//                    }
                 }
 
                 override fun afterTextChanged(s: Editable?) {
@@ -298,11 +298,62 @@ class PdfGeneratorActivity : AppCompatActivity() {
         addTextListener(editText)
         setupTextSizeSelecter(editText)
         setupFontStyleNormal(editText)
+        setupOverflowWatcher(editText)
+
 //        watchTextGrowth(editText)
 //        setupHoldResize(editText)
 //        setupFocusEvents(editText)
         // Any other custom behavior you already use
     }
+    fun setupOverflowWatcher(editText: EditText) {
+        editText.addTextChangedListener(object : TextWatcher {
+            override fun afterTextChanged(s: Editable?) {}
+
+            override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) {}
+
+            override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {
+                editText.post {
+                    val layout = editText.layout ?: return@post
+
+                    // Calculate total rendered height (including images, large text, etc.)
+                    val contentHeight = editText.layout?.height ?: 0
+                    val visibleHeight = editText.height - editText.paddingTop - editText.paddingBottom
+
+                    if (contentHeight >= visibleHeight) {
+                        // Trigger overflow only when view height can't contain the content
+
+
+
+                        // Text is overflowing in actual pixels
+
+                        // 1. Find the overflow starting point
+                        val overflowStart = layout.getLineStart(layout.lineCount - 1)
+                        val overflowText = s?.subSequence(overflowStart, s.length).toString()
+
+                        // 2. Remove overflow from current EditText
+                        (s as? Editable)?.delete(overflowStart, s.length)
+
+
+                        // 3. Add a new page and continue
+                        val newPage = addNewPage()
+                        val nextEditText = newPage.findViewById<EditText>(R.id.pdf_text_input)
+                        nextEditText.setText(overflowText)
+                        nextEditText.setSelection(nextEditText.text?.length ?: 0)
+                        nextEditText.requestFocus()
+                    }
+                }
+            }
+        })
+
+        // Just to ensure no scrollbars mess with layout
+        editText.setOnTouchListener { _, _ ->
+            editText.isVerticalScrollBarEnabled = false
+            false
+        }
+    }
+
+
+
 
     fun showSliderIfImageSelected(editText: EditText) {
 
@@ -647,7 +698,7 @@ fun setupTextSizeSelecter(editText: EditText){
                 View.MeasureSpec.makeMeasureSpec(pageView.width, View.MeasureSpec.EXACTLY),
                 View.MeasureSpec.makeMeasureSpec(pageView.height, View.MeasureSpec.EXACTLY)
             )
-            pageView.layout(0, 0, pageView.measuredWidth, pageView.measuredHeight)
+            //pageView.layout(0, 0, pageView.measuredWidth, pageView.measuredHeight)
 
             val bitmap = Bitmap.createBitmap(pageView.width, pageView.height, Bitmap.Config.ARGB_8888)
             val canvas = Canvas(bitmap)
@@ -665,6 +716,9 @@ fun setupTextSizeSelecter(editText: EditText){
 
         Toast.makeText(this, "PDF saved to ${file.absolutePath}", Toast.LENGTH_LONG).show()
     }
+
+
+
 
 
     private fun getPdfOutputFile(fileName: String): File {
