@@ -24,4 +24,7 @@ dependencyResolutionManagement {
 
 rootProject.name = "simple_world"
 include(":app")
+include(":app", ":unityLibrary",":launcher")
+project(":unityLibrary").projectDir = File(rootDir, "unityLibrary")
+
  

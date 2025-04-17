@@ -13,6 +13,7 @@ class MainActivity : ComponentActivity() {
         setContentView(R.layout.activity_main)
         val openVideoPlayerButton = findViewById<Button>(R.id.button_video_page)
         val openPdfGeneratorButton=findViewById<Button>(R.id.button_pdf_page)
+        val openunityGameButton=findViewById<Button>(R.id.button_unity_game)
         openVideoPlayerButton.setOnClickListener {
             println("start activity called")
             val intent = Intent(this, VideoListActivity::class.java)
@@ -22,6 +23,12 @@ class MainActivity : ComponentActivity() {
             val intent=Intent(this,PdfGeneratorActivity::class.java)
             startActivity(intent)
         }
+        openunityGameButton.setOnClickListener {
+            val intent = Intent(this, com.unity3d.player.UnityPlayerActivity::class.java)
+            startActivity(intent)
+        }
+
+
 
     }
 }

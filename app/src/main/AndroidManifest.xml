@@ -43,6 +43,18 @@
         <activity android:name=".ui.videofiles.VideoFilesActivity"/>
         <activity android:name=".ui.pdf.PdfGeneratorActivity"
             android:windowSoftInputMode="adjustPan"/>
+        <activity
+            android:name="com.unity3d.player.UnityPlayerActivity"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar"
+            tools:replace="android:theme" />
+<!--        <activity-->
+<!--            android:name="com.unity3d.player.UnityPlayerActivity" -->
+<!--        android:theme="@style/Theme.AppCompat.Light.NoActionBar"-->
+<!--        android:configChanges="orientation|keyboardHidden|keyboard|screenSize|smallestScreenSize"-->
+<!--        android:label="@string/app_name"-->
+<!--        tools:replace="android:theme">-->
+<!--    </activity>-->
+
     </application>
 
 <!--    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />-->

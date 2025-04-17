@@ -13,10 +13,17 @@ android {
         targetSdk = 34
         versionCode = 1
         versionName = "1.0"
-
+        ndk {
+            abiFilters += listOf("armeabi-v7a")
+        }
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
         vectorDrawables {
             useSupportLibrary = true
+        }
+    }
+    packaging {
+        jniLibs {
+            useLegacyPackaging = true
         }
     }
 
@@ -33,6 +40,13 @@ android {
         sourceCompatibility = JavaVersion.VERSION_1_8
         targetCompatibility = JavaVersion.VERSION_1_8
     }
+    packagingOptions {
+        jniLibs {
+            useLegacyPackaging = true
+        }
+        doNotStrip += "*/armeabi-v7a/*.so"
+    }
+
     kotlinOptions {
         jvmTarget = "1.8"
     }
@@ -52,7 +66,8 @@ android {
 }
 
 dependencies {
-
+    implementation(project(":unityLibrary"))
+    //implementation(project(":launcher"))
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.lifecycle.runtime.ktx)
     implementation(libs.androidx.activity.compose)

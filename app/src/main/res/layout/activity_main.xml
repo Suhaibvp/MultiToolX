@@ -44,7 +44,7 @@
             />
 
         <com.google.android.material.button.MaterialButton
-            android:id="@+id/button_coming_soon_1"
+            android:id="@+id/button_unity_game"
             android:layout_width="0dp"
             android:layout_height="150dp"
             android:layout_columnWeight="1"
