@@ -3,7 +3,8 @@ package com.example.simple_world.ui.ble
 import android.content.Intent
 import android.os.Bundle
 import androidx.activity.ComponentActivity
-import com.example.ble_manager.ui.ble_advertise.AdvertiseActivity
+import com.example.simple_world.ui.ble.advertise.AdvertiseActivity
+//import com.example.simple_world.ui.ble.ble_advertise.AdvertiseActivity
 import com.example.simple_world.databinding.ActivityBleMainBinding
 import com.example.simple_world.ui.ble.client.ClientMainActivity
 

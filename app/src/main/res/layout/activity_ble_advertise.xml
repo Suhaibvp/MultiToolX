@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+
+
+    <LinearLayout
+        android:id="@+id/serviceContainer"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="16dp">
+        <EditText
+            android:id="@+id/bleNameEditText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="MyBLEDevice"
+            android:maxLength="8"
+            android:inputType="text" />
+
+        <!-- Service UUID Input -->
+        <EditText
+            android:id="@+id/editServiceUUID"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Service UUID (leave blank to auto-generate)" />
+
+        <!-- Add Characteristic Button -->
+        <Button
+            android:id="@+id/btnAddCharacteristic"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Add Characteristic" />
+
+        <!-- Container for dynamically added characteristics -->
+        <LinearLayout
+            android:id="@+id/characteristicsContainer"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingTop="16dp" />
+
+        <!-- Start Advertise Button -->
+        <Button
+            android:id="@+id/startAdvertiseButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            android:text="Start Advertising" />
+
+    </LinearLayout>
+</ScrollView>

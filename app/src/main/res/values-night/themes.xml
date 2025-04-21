@@ -12,5 +12,11 @@
         <item name="subTextColor">@color/gray</item>
         <item name="android:textColor">@color/white</item> <!-- To be extra safe -->
     </style>
+    <style name="DialogTheme" parent="Theme.AppCompat.Light.Dialog">
+        <item name="android:windowMinWidthMajor">80%p</item>
+        <item name="android:windowMinWidthMinor">80%p</item>
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowBackground">@android:color/white</item>
+    </style>
 </resources>
 

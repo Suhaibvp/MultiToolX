@@ -1,0 +1,45 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:padding="12dp"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="#EEEEEE">
+
+    <EditText
+        android:id="@+id/editCharacteristicUUID"
+        android:hint="Characteristic UUID (leave blank to auto-generate)"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+
+    <CheckBox
+        android:id="@+id/checkRead"
+        android:text="Read"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+
+    <CheckBox
+        android:id="@+id/checkWrite"
+        android:text="Write"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+
+    <CheckBox
+        android:id="@+id/checkNotify"
+        android:text="Notify"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+
+    <EditText
+        android:id="@+id/editValue"
+        android:hint="Initial Value (optional)"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+
+    <!-- Advanced Button -->
+    <Button
+        android:id="@+id/btnAdvancedSettings"
+        android:text="⚙️ Advanced Settings "
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"/>
+</LinearLayout>

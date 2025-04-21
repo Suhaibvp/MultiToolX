@@ -72,9 +72,9 @@ android {
 }
 
 dependencies {
-    implementation(files("libs/app-debug.aar"))
+    //implementation(files("libs/app-debug.aar"))
     implementation ("org.nanohttpd:nanohttpd:2.3.1")
-    implementation(project(":unityLibrary"))
+    //implementation(project(":unityLibrary"))
     //implementation(project(":launcher"))
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.lifecycle.runtime.ktx)
