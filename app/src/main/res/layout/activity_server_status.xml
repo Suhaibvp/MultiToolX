@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:padding="16dp"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <Button
+        android:id="@+id/buttonStartServer"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Start Server" />
+
+    <TextView
+        android:id="@+id/textViewServerStatus"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Server not started"
+        android:textStyle="bold"
+        android:paddingTop="10dp" />
+
+    <TextView
+        android:id="@+id/textViewRoutes"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Routes:"
+        android:paddingTop="10dp" />
+
+    <EditText
+        android:id="@+id/editLog"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:hint="Logs will appear here..."
+        android:gravity="top"
+        android:inputType="textMultiLine"
+        android:background="#f2f2f2"
+        android:textColor="#000"
+        android:textSize="14sp"
+        android:enabled="false" />
+</LinearLayout>

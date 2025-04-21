@@ -2,4 +2,10 @@
     <string name="app_name">SimpleWorld</string>
 
     <string name="game_view_content_description">Game view</string>
+    <string-array name="http_methods">
+        <item>GET</item>
+        <item>POST</item>
+        <item>PUT</item>
+    </string-array>
+
 </resources>

@@ -3,6 +3,12 @@ plugins {
     alias(libs.plugins.kotlin.android)
 }
 
+//repositories {
+//
+//    flatDir {
+//        dirs("libs") // 👈 This is what makes your AAR visible
+//    }
+//}
 android {
     namespace = "com.example.simple_world"
     compileSdk = 35
@@ -13,13 +19,13 @@ android {
         targetSdk = 34
         versionCode = 1
         versionName = "1.0"
-        ndk {
-            abiFilters += listOf("armeabi-v7a")
-        }
-        testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
-        vectorDrawables {
-            useSupportLibrary = true
-        }
+//        ndk {
+//            abiFilters += listOf("armeabi-v7a")
+//        }
+//        testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
+//        vectorDrawables {
+//            useSupportLibrary = true
+//        }
     }
     packaging {
         jniLibs {
@@ -40,12 +46,12 @@ android {
         sourceCompatibility = JavaVersion.VERSION_1_8
         targetCompatibility = JavaVersion.VERSION_1_8
     }
-    packagingOptions {
-        jniLibs {
-            useLegacyPackaging = true
-        }
-        doNotStrip += "*/armeabi-v7a/*.so"
-    }
+//    packagingOptions {
+//        jniLibs {
+//            useLegacyPackaging = true
+//        }
+//        doNotStrip += "*/armeabi-v7a/*.so"
+//    }
 
     kotlinOptions {
         jvmTarget = "1.8"
@@ -66,6 +72,8 @@ android {
 }
 
 dependencies {
+    implementation(files("libs/app-debug.aar"))
+    implementation ("org.nanohttpd:nanohttpd:2.3.1")
     implementation(project(":unityLibrary"))
     //implementation(project(":launcher"))
     implementation(libs.androidx.core.ktx)
