@@ -135,6 +135,6 @@ This project is licensed under the MIT License. See the LICENSE file for details
 
 
 ## 👨‍💻 Author
-Developed by Suhaib VP.
-Contact: [suhaibvp9895@gmail.com]
-LinkedIn/GitHub: [Linkdin](https://www.linkedin.com/in/suhaib-vp)/[Github](https://github.com/Suhaibvp)
+- Developed by Suhaib VP.
+- Contact: [suhaibvp9895@gmail.com]
+- [Linkdin](https://www.linkedin.com/in/suhaib-vp) - [Github](https://github.com/Suhaibvp)
