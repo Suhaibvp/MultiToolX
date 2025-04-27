@@ -124,8 +124,6 @@ Create a simulated BLE server with full control over characteristics and respons
 5. Export/import BLE/API profiles
 
 
-## 📷 Screenshots
-
 
 ## 🤝 Contributing
 PRs and suggestions are welcome! Please open issues or discussions if you have feature ideas or bugs to report.
