@@ -3,34 +3,16 @@ plugins {
     alias(libs.plugins.kotlin.android)
 }
 
-//repositories {
-//
-//    flatDir {
-//        dirs("libs") // 👈 This is what makes your AAR visible
-//    }
-//}
 android {
-    namespace = "com.example.simple_world"
+    namespace = "com.example.multitoolx"
     compileSdk = 35
 
     defaultConfig {
-        applicationId = "com.example.simple_world"
+        applicationId = "com.example.multitoolx"
         minSdk = 24
         targetSdk = 34
         versionCode = 1
         versionName = "1.0"
-//        ndk {
-//            abiFilters += listOf("armeabi-v7a")
-//        }
-//        testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
-//        vectorDrawables {
-//            useSupportLibrary = true
-//        }
-    }
-    packaging {
-        jniLibs {
-            useLegacyPackaging = true
-        }
     }
 
     buildTypes {
@@ -42,31 +24,38 @@ android {
             )
         }
     }
+
     compileOptions {
         sourceCompatibility = JavaVersion.VERSION_1_8
         targetCompatibility = JavaVersion.VERSION_1_8
     }
-//    packagingOptions {
-//        jniLibs {
-//            useLegacyPackaging = true
-//        }
-//        doNotStrip += "*/armeabi-v7a/*.so"
-//    }
 
     kotlinOptions {
         jvmTarget = "1.8"
     }
+
     buildFeatures {
         compose = true
-        viewBinding=true
-
+        viewBinding = true
     }
+
     composeOptions {
         kotlinCompilerExtensionVersion = "1.5.1"
     }
+
     packaging {
         resources {
             excludes += "/META-INF/{AL2.0,LGPL2.1}"
+        }
+    }
+
+    // 👇 Add this for custom APK name
+    applicationVariants.configureEach {
+        outputs.forEach { output ->
+            if (output is com.android.build.gradle.internal.api.BaseVariantOutputImpl) {
+                val appName = "MultiToolX"
+                output.outputFileName = "$appName-${name}.apk"
+            }
         }
     }
 }

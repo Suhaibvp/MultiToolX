@@ -22,7 +22,8 @@ dependencyResolutionManagement {
 
 }
 
-rootProject.name = "simple_world"
+rootProject.name = "multitoolx"
+
 include(":app")
 //include(":app", ":unityLibrary",":launcher")
 //project(":unityLibrary").projectDir = File(rootDir, "unityLibrary")
